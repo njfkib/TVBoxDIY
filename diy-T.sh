@@ -32,7 +32,9 @@ sed -i 's/@dimen\/vs_190/match_parent/g' $CURRENT_DIR/$DIR/app/src/main/res/layo
 #添加PY支持
 wget --no-check-certificate -qO- "https://raw.githubusercontent.com/UndCover/PyramidStore/main/aar/pyramid.aar" -O $CURRENT_DIR/$DIR/app/libs/pyramid.aar
 sed -i "/thunder.jar/a\    implementation files('libs@pyramid.aar')" $CURRENT_DIR/$DIR/app/build.gradle
-sed -i 's#s@py#s\\\\py#g' $CURRENT_DIR/$DIR/app/build.gradle
+sed -i 's#@#\\#g' $CURRENT_DIR/$DIR/app/build.gradle
+sed -i 's#pyramid#\\pyramid#g' $CURRENT_DIR/$DIR/app/build.gradle
+
 echo "" >>$CURRENT_DIR/$DIR/app/proguard-rules.pro
 echo "" >>$CURRENT_DIR/$DIR/app/proguard-rules.pro
 echo "#添加PY支持" >>$CURRENT_DIR/$DIR/app/proguard-rules.pro
@@ -54,9 +56,9 @@ sed -i '/public Object\[\] proxyLocal(Map param)/a\        try {\n        if(par
 #wget --no-check-certificate -qO- "https://raw.githubusercontent.com/lm317379829/TVBoxOSC-J/main/player/src/main/jniLibs/armeabi-v7a/libijksdl.so" -O $CURRENT_DIR/$DIR/player/src/main/jniLibs/armeabi-v7a/libijksdl.so
 #wget --no-check-certificate -qO- "https://raw.githubusercontent.com/lm317379829/TVBoxOSC-J/main/player/src/main/jniLibs/armeabi-v7a/libplayer.so" -O $CURRENT_DIR/$DIR/player/src/main/jniLibs/armeabi-v7a/libplayer.so
 #Anod版IJK库
-mv $CURRENT_DIR/DIY/libijkffmpeg.so $CURRENT_DIR/$DIR/player/src/main/jniLibs/armeabi-v7a/libijkffmpeg.so
-mv $CURRENT_DIR/DIY/libijksdl.so $CURRENT_DIR/$DIR/player/src/main/jniLibs/armeabi-v7a/libijksdl.so
-mv $CURRENT_DIR/DIY/libijkplayer.so $CURRENT_DIR/$DIR/player/src/main/jniLibs/armeabi-v7a/libijkplayer.so
-sed -i '/libLoader.loadLibrary(\"player\");/i\                try {\n                    libLoader.loadLibrary(\"ijkffmpeg\");\n                    libLoader.loadLibrary(\"ijksdl\");\n                } catch (Throwable throwable) {\n\n                }' $CURRENT_DIR/$DIR/player/src/main/java/tv/danmaku/ijk/media/player/IjkMediaPlayer.java
+#mv $CURRENT_DIR/DIY/libijkffmpeg.so $CURRENT_DIR/$DIR/player/src/main/jniLibs/armeabi-v7a/libijkffmpeg.so
+#mv $CURRENT_DIR/DIY/libijksdl.so $CURRENT_DIR/$DIR/player/src/main/jniLibs/armeabi-v7a/libijksdl.so
+#mv $CURRENT_DIR/DIY/libplayer.so $CURRENT_DIR/$DIR/player/src/main/jniLibs/armeabi-v7a/libplayer.so
+#sed -i '/libLoader.loadLibrary(\"player\");                /i\try {\n                    libLoader.loadLibrary(\"ijkffmpeg\");\n                    libLoader.loadLibrary(\"ijksdl\");\n                } catch (Throwable throwable) {\n\n                }' $CURRENT_DIR/$DIR/player/src/main/java/tv/danmaku/ijk/media/player/IjkMediaPlayer.java
 
 echo 'DIY end'
