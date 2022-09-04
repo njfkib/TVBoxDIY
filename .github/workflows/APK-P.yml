@@ -15,7 +15,7 @@ jobs:
         with:
           fetch-depth: 0
       - name: Clone Project
-        run: git clone -b main --depth=1 https://github.com/jinqiusky/Hometv-P.git
+        run: git clone -b main --depth=1 https://github.com/jinqiusky/TVBoxOSC-P.git
       - name: DIY
         run: |
           chmod +x diy-P.sh
