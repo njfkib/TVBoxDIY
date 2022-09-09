@@ -18,8 +18,8 @@ jobs:
         run: git clone -b main --depth=1 https://github.com/kensonmiao/CatVodTVOSC.git
       - name: DIY
         run: |
-          chmod +x diy-T.sh
-          bash ${{ github.workspace }}/diy-T.sh
+          chmod +x diy-K-Y.sh
+          bash ${{ github.workspace }}/diy-K-Y.sh
       - name: Checkout Source Code and Zip
         if: ${{ env.commit }}
         run: |
