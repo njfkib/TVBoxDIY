@@ -9,7 +9,7 @@ on:
 
 jobs:
   build:
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
         with:
@@ -20,14 +20,6 @@ jobs:
         run: |
           chmod +x diy-K-Y.sh
           bash ${{ github.workspace }}/diy-K-Y.sh
-      - name: Checkout Source Code and Zip
-        if: ${{ env.commit }}
-        run: |
-          git clone ${{ env.upStream }} TVBoxOSC
-          cd TVBoxOSC
-          git checkout ${{ env.commit }}
-          echo "tag=$(git log --date=format:'%Y%m%d-%H%M' --pretty=format:%cd ${{ env.commitS }} -1)" >> $GITHUB_ENV
-          zip -q -x ".git/*" -r ${{ env.commitS }}-source.zip .
       - name: Build With Gradle
         run: |
           num=$(find ${{ github.workspace }} -name gradlew  | awk -F"/" '{print NF-1}')
