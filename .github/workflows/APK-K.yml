@@ -1,5 +1,5 @@
 name: APK-K Build
-
+ 
 on:
 #  push:
 #    branches:
@@ -18,16 +18,8 @@ jobs:
         run: git clone -b main --depth=1 https://github.com/kensonmiao/CatVodTVOSC.git
       - name: DIY
         run: |
-          chmod +x diy-K.sh
-          bash ${{ github.workspace }}/diy-K.sh
-      - name: Checkout Source Code and Zip
-        if: ${{ env.commit }}
-        run: |
-          git clone ${{ env.upStream }} TVBoxOSC
-          cd TVBoxOSC
-          git checkout ${{ env.commit }}
-          echo "tag=$(git log --date=format:'%Y%m%d-%H%M' --pretty=format:%cd ${{ env.commitS }} -1)" >> $GITHUB_ENV
-          zip -q -x ".git/*" -r ${{ env.commitS }}-source.zip .
+          chmod +x diy-T.sh
+          bash ${{ github.workspace }}/diy-T.sh
       - name: Build With Gradle
         run: |
           num=$(find ${{ github.workspace }} -name gradlew  | awk -F"/" '{print NF-1}')
