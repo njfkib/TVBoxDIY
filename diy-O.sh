@@ -8,7 +8,7 @@ cd $DIR
 #xwalk修复
 sed -i 's/download.01.org\/crosswalk\/releases\/crosswalk\/android\/maven2/raw.githubusercontent.com\/lm317379829\/TVBoxDIY\/main/g' $CURRENT_DIR/$DIR/build.gradle
 #名称修改
-sed -i 's/TVBox/MeTv/g' $CURRENT_DIR/$DIR/app/src/main/res/values/strings.xml
+sed -i 's/TVBox/MeTv-O/g' $CURRENT_DIR/$DIR/app/src/main/res/values/strings.xml
 #背景修改
 mv $CURRENT_DIR/DIY/app_bg.png $CURRENT_DIR/$DIR/app/src/main/res/drawable/app_bg.png
 #缩略图清晰度修改
