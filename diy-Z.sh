@@ -8,7 +8,7 @@ cd $CURRENT_DIR/$DIR
 #名称修改
 sed -i 's/🐷🐷/MeTv/g' $CURRENT_DIR/$DIR/app/src/main/res/values/strings.xml
 sed -i 's/🐷/MeTv/g' $CURRENT_DIR/$DIR/app/src/main/res/values-zh/strings.xml
-sed -i 's/https://gitcode.net/t1/tan/-/raw/master/remote.ini/http://17hd.ml:81/update/remote.ini/g' $CURRENT_DIR/$DIR/app/src/main/java/com/github/tvbox/osc/util/RemoteConfig.java
+sed -i 's/a.mayishidai.cn:7080/17hd.ml:81/g' $CURRENT_DIR/$DIR/app/src/main/java/com/github/tvbox/osc/util/RemoteConfig.java
 #图标修改
 mv $CURRENT_DIR/DIY/app_icon.png $CURRENT_DIR/$DIR/app/src/main/res/drawable/app_icon.png
 #背景修改
