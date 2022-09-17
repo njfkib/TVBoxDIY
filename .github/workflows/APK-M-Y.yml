@@ -1,5 +1,5 @@
 name: APK-M-Y Build
-
+ 
 on:
 #  push:
 #    branches:
@@ -18,15 +18,14 @@ jobs:
         run: git clone -b main --depth=1 https://github.com/mayishidai/TVBoxOS.git
       - name: DIY
         run: |
-          chmod +x APK-M-Y.sh
-          bash ${{ github.workspace }}/APK-M-Y.sh
+          chmod +x diy-M-Y.sh
+          bash ${{ github.workspace }}/diy-M-Y.sh
       - name: Build With Gradle
         run: |
           num=$(find ${{ github.workspace }} -name gradlew  | awk -F"/" '{print NF-1}')
           DIR=$(find ${{ github.workspace }} -name gradlew  | cut -d \/ -f$num)
           cd $DIR
           chmod +x gradlew
-          ./gradlew assembleDebug --build-cache --parallel --daemon --warning-mode all
           ./gradlew assemblerelease --build-cache --parallel --daemon --warning-mode all
       - name: Prepare App
         run: |
