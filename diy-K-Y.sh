@@ -5,6 +5,8 @@ CURRENT_DIR=$(cd $(dirname $0); pwd)
 num=$(find $CURRENT_DIR -name gradlew  | awk -F"/" '{print NF-1}' | head -1)
 DIR=$(find $CURRENT_DIR -name gradlew  | cut -d \/ -f$num | head -1)
 cd $CURRENT_DIR/$DIR
+#共存
+sed -i 's/com.github.tvbox.osc/com.github.tvbox.osc.km/g' $CURRENT_DIR/$DIR/app/build.gradle
 #xwalk修复
 #sed -i 's/download.01.org\/crosswalk\/releases\/crosswalk\/android\/maven2/raw.githubusercontent.com\/lm317379829\/TVBoxDIY\/main/g' $CURRENT_DIR/$DIR/build.gradle
 #改名
