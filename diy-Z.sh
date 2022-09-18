@@ -17,10 +17,13 @@ echo "RELEASE_STORE_PASSWORD=TVBoxOSC" >>$CURRENT_DIR/$DIR/gradle.properties
 echo "RELEASE_KEY_PASSWORD=TVBoxOSC" >>$CURRENT_DIR/$DIR/gradle.properties
 
 #名称修改
-sed -i 's/TVBox/MeTv-M/g' $CURRENT_DIR/$DIR/app/src/main/res/values/strings.xml
 #sed -i 's/🐷🐷/MeTv/g' $CURRENT_DIR/$DIR/app/src/main/res/values/strings.xml
 #sed -i 's/🐷/MeTv/g' $CURRENT_DIR/$DIR/app/src/main/res/values-zh/strings.xml
+sed -i 's/TVBox/MeTv-M/g' $CURRENT_DIR/$DIR/app/src/main/res/values/strings.xml
+sed -i 's/TVBox/MeTV-M/g' $CURRENT_DIR/$DIR/app/src/main/res/raw/index.html
 sed -i 's/a.mayishidai.cn:7080/17hd.ml:81/g' $CURRENT_DIR/$DIR/app/src/main/java/com/github/tvbox/osc/util/RemoteConfig.java
+sed -i 's/mayishidai.cn/17hd.ml/g' $CURRENT_DIR/$DIR/app/src/main/java/com/github/tvbox/osc/util/RemoteConfig.java
+sed -i 's/mayishidai.cn/17hd.ml:81/g' $CURRENT_DIR/$DIR/app/build.gradle
 #图标修改
 mv $CURRENT_DIR/DIY/app_icon.png $CURRENT_DIR/$DIR/app/src/main/res/drawable/app_icon.png
 #背景修改
