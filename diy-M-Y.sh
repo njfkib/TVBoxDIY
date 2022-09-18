@@ -28,7 +28,7 @@ echo "RELEASE_KEY_PASSWORD=TVBoxOSC" >>$CURRENT_DIR/$DIR/gradle.properties
 sed -i 's/TVBox/MeTv-M/g' $CURRENT_DIR/$DIR/app/src/main/res/values/strings.xml
 sed -i 's/TVBox/MeTV-M/g' $CURRENT_DIR/$DIR/app/src/main/res/raw/index.html
 sed -i 's/a.mayishidai.cn:7080/17hd.ml:81/g' $CURRENT_DIR/$DIR/app/src/main/java/com/github/tvbox/osc/util/RemoteConfig.java
-sed -i 's/mayishidai.cn/17hd.ml/g' $CURRENT_DIR/$DIR/app/src/main/java/com/github/tvbox/osc/util/RemoteConfig.java
+sed -i 's/mayishidai.cn/888hd.tk/g' $CURRENT_DIR/$DIR/app/src/main/java/com/github/tvbox/osc/util/RemoteConfig.java
 sed -i 's/mayishidai.cn/17hd.ml:81/g' $CURRENT_DIR/$DIR/app/build.gradle
 #背景修改
 mv $CURRENT_DIR/DIY/app_bg.png $CURRENT_DIR/$DIR/app/src/main/res/drawable/app_bg.png
