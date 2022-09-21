@@ -25,18 +25,21 @@ echo "RELEASE_KEY_PASSWORD=TVBoxOSC" >>$CURRENT_DIR/$DIR/gradle.properties
 #sed -i 's/download.01.org\/crosswalk\/releases\/crosswalk\/android\/maven2/raw.githubusercontent.com\/lm317379829\/TVBoxDIY\/main/g' $CURRENT_DIR/$DIR/build.gradle
 
 #名称修改
-sed -i 's/TVBox/MeTv-M/g' $CURRENT_DIR/$DIR/app/src/main/res/values/strings.xml
-sed -i 's/TVBox/MeTV-M/g' $CURRENT_DIR/$DIR/app/src/main/res/raw/index.html
-sed -i 's/a.mayishidai.cn:7080/17hd.ml:81/g' $CURRENT_DIR/$DIR/app/src/main/java/com/github/tvbox/osc/util/RemoteConfig.java
-sed -i 's/mayishidai.cn/888hd.tk/g' $CURRENT_DIR/$DIR/app/src/main/java/com/github/tvbox/osc/util/RemoteConfig.java
-sed -i 's/mayishidai.cn/17hd.ml:81/g' $CURRENT_DIR/$DIR/app/build.gradle
+sed -i 's/🐷🐷/MeTv-Z/g' $CURRENT_DIR/$DIR/app/src/main/res/values/strings.xml
+sed -i 's/🐷🐷/MeTv-Z/g' $CURRENT_DIR/$DIR/app/src/main/res/values-zh/strings.xml
+sed -i 's/TVBox/MeTV-Z/g' $CURRENT_DIR/$DIR/app/src/main/res/raw/index.html
+#sed -i 's/a.mayishidai.cn:7080/17hd.ml:81/g' $CURRENT_DIR/$DIR/app/src/main/java/com/github/tvbox/osc/util/RemoteConfig.java
+#sed -i 's/mayishidai.cn/888hd.tk/g' $CURRENT_DIR/$DIR/app/src/main/java/com/github/tvbox/osc/util/RemoteConfig.java
+sed -i 's/🐷/MeTv-Z/g' $CURRENT_DIR/$DIR/app/src/main/res/values/strings.xml
+sed -i 's/🐷/MeTv-Z/g' $CURRENT_DIR/$DIR/app/src/main/res/values-zh/strings.xml
+#sed -i 's/mayishidai.cn/17hd.ml:81/g' $CURRENT_DIR/$DIR/app/build.gradle
 #背景修改
 mv $CURRENT_DIR/DIY/app_bg.png $CURRENT_DIR/$DIR/app/src/main/res/drawable/app_bg.png
 #图标修改
-cp $CURRENT_DIR/DIY/app_icon.png $CURRENT_DIR/$DIR/app/src/main/res/drawable-hdpi/app_icon.png
-cp $CURRENT_DIR/DIY/app_icon.png $CURRENT_DIR/$DIR/app/src/main/res/drawable-xhdpi/app_icon.png
+#cp $CURRENT_DIR/DIY/app_icon.png $CURRENT_DIR/$DIR/app/src/main/res/drawable-hdpi/app_icon.png
+#cp $CURRENT_DIR/DIY/app_icon.png $CURRENT_DIR/$DIR/app/src/main/res/drawable-xhdpi/app_icon.png
 cp $CURRENT_DIR/DIY/app_icon.png $CURRENT_DIR/$DIR/app/src/main/res/drawable-xxhdpi/app_icon.png
-mv $CURRENT_DIR/DIY/app_icon.png $CURRENT_DIR/$DIR/app/src/main/res/drawable-xxxhdpi/app_icon.png
+#mv $CURRENT_DIR/DIY/app_icon.png $CURRENT_DIR/$DIR/app/src/main/res/drawable-xxxhdpi/app_icon.png
 #添加PY支持
 wget --no-check-certificate -qO- "https://raw.githubusercontent.com/UndCover/PyramidStore/main/aar/pyramid.aar" -O $CURRENT_DIR/$DIR/app/libs/pyramid.aar
 sed -i "/thunder.jar/a\    implementation files('libs@pyramid.aar')" $CURRENT_DIR/$DIR/app/build.gradle
